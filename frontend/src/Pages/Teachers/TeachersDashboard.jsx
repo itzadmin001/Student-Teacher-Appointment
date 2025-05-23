@@ -186,36 +186,38 @@ function TeachersDashboard() {
             {/* Upcoming Appointments */}
             <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 mb-8">
                 <h2 className="text-xl font-bold text-blue-700 mb-4">Your Upcoming Appointment Detail</h2>
-                <table className="min-w-full bg-white rounded-lg">
-                    <thead>
-                        <tr className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white">
-                            <th className="py-3 px-4 text-left">Sr. No</th>
-                            <th className="py-3 px-4 text-left">Name</th>
-                            <th className="py-3 px-4 text-left">Email</th>
-                            <th className="py-3 px-4 text-left">Date</th>
-                            <th className="py-3 px-4 text-left">Schedule Time</th>
-                            <th className="py-3 px-4 text-center">Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {successfulAppointments
-                            ?.filter(req => req.appointment === "success")
-                            .map((req, idx) => (
-                                <tr key={req.id} className="hover:bg-blue-50 transition">
-                                    <td className="py-3 px-4 border-b">{idx + 1}</td>
-                                    <td className="py-3 px-4 border-b">{req.name}</td>
-                                    <td className="py-3 px-4 border-b">{req.email}</td>
-                                    <td className="py-3 px-4 border-b">{req.date}</td>
-                                    <td className="py-3 px-4 border-b">{req.time}</td>
-                                    <td className="py-3 px-4 border-b text-center">
-                                        <button onClick={() => handleDeleteAppointment(req.id)} className="text-red-500 hover:text-red-700 transition">
-                                            <FaTrash />
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
-                    </tbody>
-                </table>
+                <div className="overflow-x-auto">
+                    <table className="w-full bg-white rounded-lg min-w-[600px]">
+                        <thead>
+                            <tr className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white">
+                                <th className="py-3 px-4 text-left">Sr. No</th>
+                                <th className="py-3 px-4 text-left">Name</th>
+                                <th className="py-3 px-4 text-left">Email</th>
+                                <th className="py-3 px-4 text-left">Date</th>
+                                <th className="py-3 px-4 text-left">Schedule Time</th>
+                                <th className="py-3 px-4 text-center">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {successfulAppointments
+                                ?.filter(req => req.appointment === "success")
+                                .map((req, idx) => (
+                                    <tr key={req.id} className="hover:bg-blue-50 transition">
+                                        <td className="py-3 px-4 border-b">{idx + 1}</td>
+                                        <td className="py-3 px-4 border-b">{req.name}</td>
+                                        <td className="py-3 px-4 border-b">{req.email}</td>
+                                        <td className="py-3 px-4 border-b">{req.date}</td>
+                                        <td className="py-3 px-4 border-b">{req.time}</td>
+                                        <td className="py-3 px-4 border-b text-center">
+                                            <button onClick={() => handleDeleteAppointment(req.id)} className="text-red-500 hover:text-red-700 transition">
+                                                <FaTrash />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             {/* Approve / Rejection Appointments */}

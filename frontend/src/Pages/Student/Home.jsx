@@ -14,7 +14,7 @@ function Home() {
 
     return (
         <div>
-            <div className=' fixed bottom-2 right-2 bg-white p-4 rounded-lg shadow-2xl border-2 border-gray-500' >{date.toDateString()}</div>
+            <div className=' md:fixed hidden bottom-2 right-2 bg-white p-4 rounded-lg shadow-2xl border-2 border-gray-500' >{date.toDateString()}</div>
             <Hero Light={Light} />
         </div>
     )
@@ -22,9 +22,9 @@ function Home() {
 
 const Hero = ({ Light }) => {
     return (
-        <section className={`w-full h-[100vh] p-4 flex flex-col justify-center items-center duration-500 select-none ${Light ? "bg-gray-800  text-gray-100" : ""}`}>
+        <section className={`w-full min-h-[100vh] p-4 flex flex-col justify-center items-center duration-500 select-none ${Light ? "bg-gray-800  text-gray-100" : ""}`}>
             <h1 className=' text-center text-4xl font-bold mb-10'>Student-Teacher Appointment</h1>
-            <main className=' w-3/5 grid grid-cols-3 gap-4'>
+            <main className=' w-3/5 grid md:grid-cols-3 gap-4'>
                 <div className={`p-4 border-2 shadow-lg select-none duration-300 ${Light ? "rounded-3xl" : "rounded-lg "}`}>
                     <img src={Student} alt="" className='rounded-lg' />
                     <div className=' text-center flex flex-col gap-3 mt-5'>

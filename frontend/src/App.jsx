@@ -44,17 +44,18 @@ function App() {
           {
             path: "status",
             element: <StatusPage />
+          },
+          {
+            path: "/teacher/login",
+            element: <TeacherLogin />
+          },
+          {
+            path: "/admin/login",
+            element: <AdminLogin />
           }
         ]
-      },
-      {
-        path: "/teacher/login",
-        element: <TeacherLogin />
-      },
-      {
-        path: "/admin/login",
-        element: <AdminLogin />
       }
+
     ]
   )
   return (

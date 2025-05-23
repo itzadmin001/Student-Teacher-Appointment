@@ -141,7 +141,7 @@ const UpComingAppointments = ({
                 </table>
             </div>
             <h1 className='text-2xl font-semibold text-center mb-8 text-blue-700 mt-5 '>ALL Teachers</h1>
-            <div className='grid md:grid-cols-5 grid-cols-4 gap-6 mt-5'>
+            <div className='grid md:grid-cols-5 sm:grid-cols-4 gap-6 mt-5'>
                 {teachers?.map((item, i) => (
                     <div key={item.id} className='bg-white text-center rounded-lg shadow-xl p-4 flex flex-col items-center'>
                         <img src={Teachers} alt="" className='rounded-lg w-[18vw] mb-3' />
